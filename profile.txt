@@ -1,0 +1,434 @@
+INFO:root:         3089015 function calls (3068914 primitive calls) in 7.022 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.024    0.024    6.705    6.705 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:70(fit)
+      500    0.004    0.000    4.443    0.009 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:47(fit_base)
+      500    0.004    0.000    4.210    0.008 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:48(<listcomp>)
+     1000    0.008    0.000    4.197    0.004 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/tree/tree.py:1118(fit)
+     1000    0.038    0.000    4.189    0.004 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/tree/tree.py:125(fit)
+     1000    3.866    0.004    3.874    0.004 {method 'build' of 'sklearn.tree._tree.DepthFirstTreeBuilder' objects}
+     1502    0.044    0.000    1.214    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/distns/normal.py:9(__init__)
+     1502    0.002    0.000    1.170    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:770(__call__)
+     1502    0.003    0.000    1.168    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:753(freeze)
+     1502    0.011    0.000    1.165    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:422(__init__)
+      500    0.017    0.000    1.151    0.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:53(line_search)
+     1502    0.038    0.000    1.149    0.001 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:1552(__init__)
+     6000    0.052    0.000    0.727    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:332(check_array)
+     1502    0.017    0.000    0.710    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:702(_construct_doc)
+     3004    0.239    0.000    0.647    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/doccer.py:12(docformat)
+     4000    0.014    0.000    0.644    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/tree/tree.py:406(predict)
+34506/22506    0.028    0.000    0.622    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+     4000    0.007    0.000    0.499    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/tree/tree.py:388(_validate_X_predict)
+     1500    0.003    0.000    0.404    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/scores.py:7(loss)
+     6000    0.052    0.000    0.398    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:36(_assert_all_finite)
+     1500    0.003    0.000    0.383    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/distns/normal.py:22(nll)
+     1500    0.006    0.000    0.354    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:445(logpdf)
+     1500    0.123    0.000    0.348    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:1734(logpdf)
+     6000    0.016    0.000    0.320    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/extmath.py:663(_safe_accumulator_op)
+     1502    0.019    0.000    0.302    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:622(_construct_argparser)
+    15002    0.291    0.000    0.291    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+     9000    0.020    0.000    0.288    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:73(_wrapreduction)
+     6000    0.006    0.000    0.284    0.000 <__array_function__ internals>:2(sum)
+     6000    0.010    0.000    0.272    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2045(sum)
+      500    0.004    0.000    0.227    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:93(<listcomp>)
+      500    0.004    0.000    0.226    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:49(<listcomp>)
+        2    0.000    0.000    0.224    0.112 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:128(pred_dist)
+        3    0.015    0.005    0.222    0.074 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:32(pred_param)
+     4506    0.022    0.000    0.215    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/_util.py:270(getargspec_no_self)
+    40017    0.204    0.000    0.210    0.000 {built-in method numpy.array}
+     1000    0.005    0.000    0.204    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:38(<listcomp>)
+    15509    0.006    0.000    0.186    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_asarray.py:16(asarray)
+      500    0.002    0.000    0.184    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/scores.py:10(natural_grad)
+     4506    0.004    0.000    0.173    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:3081(signature)
+     4506    0.004    0.000    0.169    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2829(from_callable)
+9012/4506    0.031    0.000    0.165    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2198(_signature_from_callable)
+      500    0.001    0.000    0.156    0.000 <__array_function__ internals>:2(solve)
+      500    0.147    0.000    0.155    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:327(solve)
+     3004    0.083    0.000    0.153    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/doccer.py:179(indentcount_lines)
+     1502    0.142    0.000    0.143    0.000 {built-in method builtins.exec}
+      500    0.067    0.000    0.135    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:42(sample)
+     4000    0.111    0.000    0.112    0.000 {method 'predict' of 'sklearn.tree._tree.Tree' objects}
+        1    0.000    0.000    0.112    0.112 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:133(predict)
+     1500    0.007    0.000    0.107    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:520(argsreduce)
+    96128    0.096    0.000    0.096    0.000 {method 'splitlines' of 'str' objects}
+        1    0.001    0.001    0.093    0.093 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/datasets/base.py:489(load_digits)
+     1500    0.013    0.000    0.092    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:545(<listcomp>)
+        1    0.000    0.000    0.091    0.091 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:809(loadtxt)
+        2    0.006    0.003    0.086    0.043 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:1047(read_data)
+     1502    0.005    0.000    0.085    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:587(__init__)
+    96128    0.085    0.000    0.085    0.000 {method 'expandtabs' of 'str' objects}
+     4506    0.031    0.000    0.083    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2117(_signature_from_function)
+     3000    0.002    0.000    0.079    0.000 <__array_function__ internals>:2(extract)
+     3000    0.008    0.000    0.075    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/function_base.py:1628(extract)
+      500    0.029    0.000    0.066    0.000 {method 'choice' of 'numpy.random.mtrand.RandomState' objects}
+     1797    0.019    0.000    0.064    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:1074(<listcomp>)
+     4502    0.020    0.000    0.057    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_methods.py:134(_mean)
+   746115    0.052    0.000    0.052    0.000 {method 'append' of 'list' objects}
+   112613    0.025    0.000    0.047    0.000 {built-in method builtins.isinstance}
+   116805    0.036    0.000    0.045    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:777(floatconv)
+     9013    0.042    0.000    0.042    0.000 {method 'replace' of 'str' objects}
+     6005    0.012    0.000    0.041    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:131(_num_samples)
+     2502    0.002    0.000    0.040    0.000 {method 'mean' of 'numpy.ndarray' objects}
+     7000    0.004    0.000    0.036    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:55(_wrapfunc)
+     1500    0.002    0.000    0.036    0.000 <__array_function__ internals>:2(norm)
+     9012    0.028    0.000    0.035    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2750(__init__)
+     4506    0.013    0.000    0.033    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:1799(_signature_bound_method)
+     1500    0.018    0.000    0.032    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:2325(norm)
+     1500    0.003    0.000    0.031    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numerictypes.py:602(find_common_type)
+   144195    0.029    0.000    0.029    0.000 {built-in method builtins.min}
+     1002    0.002    0.000    0.029    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_internal.py:291(__init__)
+     6000    0.006    0.000    0.028    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/warnings.py:165(simplefilter)
+    82614    0.026    0.000    0.027    0.000 {method 'join' of 'str' objects}
+     3000    0.002    0.000    0.026    0.000 <__array_function__ internals>:2(nonzero)
+     1002    0.005    0.000    0.026    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_internal.py:274(_get_void_ptr)
+     3000    0.019    0.000    0.025    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numerictypes.py:578(_can_coerce_all)
+     7000    0.010    0.000    0.025    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numerictypes.py:365(issubdtype)
+     7510    0.015    0.000    0.025    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2467(__init__)
+334516/334515    0.024    0.000    0.024    0.000 {built-in method builtins.len}
+    66554    0.023    0.000    0.023    0.000 {built-in method builtins.hasattr}
+     3000    0.002    0.000    0.023    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1759(nonzero)
+   196778    0.022    0.000    0.022    0.000 {method 'lstrip' of 'str' objects}
+     9006    0.003    0.000    0.022    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/abc.py:137(__instancecheck__)
+     6000    0.003    0.000    0.022    0.000 <__array_function__ internals>:2(ravel)
+     6000    0.012    0.000    0.021    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/warnings.py:181(_add_filter)
+     1500    0.001    0.000    0.020    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:223(_logpdf)
+     1500    0.001    0.000    0.020    0.000 <__array_function__ internals>:2(any)
+     9006    0.010    0.000    0.019    0.000 {built-in method _abc._abc_instancecheck}
+     1500    0.019    0.000    0.019    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:165(_norm_logpdf)
+     3000    0.019    0.000    0.019    0.000 {method 'nonzero' of 'numpy.ndarray' objects}
+     3000    0.002    0.000    0.019    0.000 <__array_function__ internals>:2(take)
+     1500    0.002    0.000    0.017    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2189(any)
+     1500    0.003    0.000    0.017    0.000 {method 'mean' of 'numpy.generic' objects}
+     4506    0.005    0.000    0.017    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2843(replace)
+      500    0.014    0.000    0.015    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/distns/normal.py:25(D_nll)
+     6000    0.006    0.000    0.015    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1648(ravel)
+     3000    0.003    0.000    0.014    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:97(take)
+     4000    0.007    0.000    0.014    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:866(check_is_fitted)
+     1500    0.001    0.000    0.014    0.000 <__array_function__ internals>:2(place)
+     6008    0.014    0.000    0.014    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/function_base.py:2031(__init__)
+    14000    0.010    0.000    0.014    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numerictypes.py:293(issubclass_)
+    20506    0.006    0.000    0.013    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_asarray.py:88(asanyarray)
+     2500    0.002    0.000    0.013    0.000 <__array_function__ internals>:2(atleast_1d)
+     4506    0.008    0.000    0.012    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:484(unwrap)
+     1500    0.002    0.000    0.012    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/function_base.py:1684(place)
+     6000    0.010    0.000    0.011    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/warnings.py:474(__enter__)
+     4502    0.010    0.000    0.011    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_methods.py:50(_count_reduce_items)
+     3004    0.011    0.000    0.011    0.000 {method 'take' of 'numpy.ndarray' objects}
+     1000    0.001    0.000    0.011    0.000 <__array_function__ internals>:2(amax)
+      500    0.009    0.000    0.010    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/distns/normal.py:41(fisher_info)
+     1500    0.009    0.000    0.010    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:895(_support_mask)
+     1500    0.010    0.000    0.010    0.000 {built-in method numpy.core._multiarray_umath._insert}
+     9006    0.002    0.000    0.010    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/abc.py:141(__subclasscheck__)
+     6004    0.002    0.000    0.009    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+   116805    0.009    0.000    0.009    0.000 {method 'lower' of 'str' objects}
+      500    0.001    0.000    0.009    0.000 <__array_function__ internals>:2(prod)
+     2500    0.005    0.000    0.009    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/shape_base.py:24(atleast_1d)
+     1000    0.003    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/learners.py:14(default_tree_learner)
+      500    0.001    0.000    0.008    0.000 <__array_function__ internals>:2(mean)
+     1798    0.002    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:1035(split_line)
+     1000    0.002    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2504(amax)
+    17005    0.006    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/sparse/base.py:1189(isspmatrix)
+     7512    0.006    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py:284(__call__)
+     6000    0.005    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:325(_ensure_no_complex_data)
+     6000    0.007    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/warnings.py:493(__exit__)
+     1000    0.003    0.000    0.008    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_dtype.py:319(_name_get)
+      500    0.001    0.000    0.007    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2792(prod)
+     9006    0.007    0.000    0.007    0.000 {built-in method _abc._abc_subclasscheck}
+    34009    0.007    0.000    0.007    0.000 {built-in method builtins.issubclass}
+      500    0.001    0.000    0.007    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:3153(mean)
+     1500    0.001    0.000    0.007    0.000 <__array_function__ internals>:2(putmask)
+     6000    0.005    0.000    0.007    0.000 <frozen importlib._bootstrap>:416(parent)
+    20501    0.006    0.000    0.006    0.000 {built-in method builtins.getattr}
+     1002    0.006    0.000    0.006    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_internal.py:262(__array_interface__)
+     1000    0.001    0.000    0.006    0.000 <__array_function__ internals>:2(reshape)
+     1000    0.002    0.000    0.006    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/tree/tree.py:1091(__init__)
+     9000    0.006    0.000    0.006    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:74(<dictcomp>)
+     6000    0.006    0.000    0.006    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/warnings.py:453(__init__)
+    12016    0.004    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2799(<genexpr>)
+     1802    0.005    0.000    0.005    0.000 {method 'split' of 'str' objects}
+     6000    0.005    0.000    0.005    0.000 {method 'remove' of 'list' objects}
+3595/1798    0.002    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_internal.py:910(__call__)
+     5000    0.002    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/base.py:621(is_classifier)
+     1000    0.000    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_asarray.py:141(ascontiguousarray)
+     1002    0.005    0.000    0.005    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ctypes/__init__.py:497(cast)
+     6000    0.005    0.000    0.005    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+    22530    0.005    0.000    0.005    0.000 {method 'values' of 'mappingproxy' objects}
+    21000    0.004    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numerictypes.py:587(<listcomp>)
+3594/1797    0.003    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:1018(pack_items)
+     1000    0.001    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:202(reshape)
+     6000    0.003    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/_config.py:13(get_config)
+     1500    0.002    0.000    0.004    0.000 <__array_function__ internals>:2(shape)
+     4506    0.003    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/_util.py:293(<listcomp>)
+     4506    0.002    0.000    0.004    0.000 <string>:1(__new__)
+     1000    0.004    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/tree/tree.py:81(__init__)
+     9012    0.003    0.000    0.004    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:158(isfunction)
+     9004    0.004    0.000    0.004    0.000 {method 'copy' of 'dict' objects}
+     4000    0.002    0.000    0.003    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:913(<listcomp>)
+      500    0.002    0.000    0.003    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:144(_commonType)
+     1502    0.003    0.000    0.003    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:1617(_updated_ctor_param)
+     6000    0.003    0.000    0.003    0.000 {method 'insert' of 'list' objects}
+     4506    0.003    0.000    0.003    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/_util.py:307(<listcomp>)
+    24032    0.003    0.000    0.003    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2529(kind)
+    14526    0.002    0.000    0.002    0.000 {method 'get' of 'dict' objects}
+    22530    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2835(parameters)
+     6000    0.002    0.000    0.002    0.000 {method 'rpartition' of 'str' objects}
+     4506    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:504(_is_wrapper)
+     4506    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:41(instancemethod)
+     1000    0.002    0.000    0.002    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+     1000    0.002    0.000    0.002    0.000 {built-in method numpy.zeros}
+     7512    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py:526(__new__)
+     1002    0.002    0.000    0.002    0.000 {method 'from_buffer' of '_ctypes.PyCArrayType' objects}
+     4506    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/_util.py:297(<listcomp>)
+     3002    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:862(_argcheck)
+    18000    0.002    0.000    0.002    0.000 {built-in method _warnings._filters_mutated}
+    12006    0.002    0.000    0.002    0.000 {method 'items' of 'dict' objects}
+     4506    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/_util.py:302(<listcomp>)
+     1500    0.002    0.000    0.002    0.000 {method 'fill' of 'numpy.ndarray' objects}
+     1000    0.001    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:116(_makearray)
+    13518    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2517(name)
+     1500    0.002    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numerictypes.py:654(<listcomp>)
+     1505    0.002    0.000    0.002    0.000 {built-in method numpy.empty}
+     4506    0.002    0.000    0.002    0.000 {built-in method builtins.setattr}
+     4511    0.002    0.000    0.002    0.000 {built-in method __new__ of type object at 0x1038f5d50}
+      500    0.002    0.000    0.002    0.000 {built-in method numpy.arange}
+       34    0.000    0.000    0.002    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:278(read1)
+        1    0.000    0.000    0.002    0.002 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/model_selection/_split.py:1998(train_test_split)
+     1002    0.001    0.000    0.001    0.000 {built-in method _ctypes.pointer}
+       34    0.000    0.000    0.001    0.000 {method 'read1' of '_io.BufferedReader' objects}
+       34    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_compression.py:66(readinto)
+     7510    0.001    0.000    0.001    0.000 {method 'isidentifier' of 'str' objects}
+     9012    0.001    0.000    0.001    0.000 {built-in method builtins.callable}
+       34    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:438(read)
+     1502    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/_lib/_util.py:174(check_random_state)
+      501    0.001    0.000    0.001    0.000 {method 'astype' of 'numpy.ndarray' objects}
+     4000    0.001    0.000    0.001    0.000 {built-in method builtins.all}
+     6000    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2040(_sum_dispatcher)
+        3    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/model_selection/_split.py:2123(<genexpr>)
+        4    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/__init__.py:181(safe_indexing)
+     1001    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:763(check_random_state)
+     2001    0.001    0.000    0.001    0.000 {method 'squeeze' of 'numpy.ndarray' objects}
+     1500    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1856(shape)
+     4506    0.001    0.000    0.001    0.000 {built-in method sys.getrecursionlimit}
+     6000    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1644(_ravel_dispatcher)
+     1798    0.001    0.000    0.001    0.000 {method 'split' of 're.Pattern' objects}
+     1000    0.000    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:134(_realType)
+       33    0.001    0.000    0.001    0.000 {method 'decompress' of 'zlib.Decompress' objects}
+     1500    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:121(isComplexType)
+     4506    0.001    0.000    0.001    0.000 {built-in method builtins.id}
+     6008    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/inspect.py:2521(default)
+     1000    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+     1500    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:874(_get_support)
+     1500    0.001    0.000    0.001    0.000 {method 'conj' of 'numpy.ndarray' objects}
+      500    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:111(get_linalg_error_extobj)
+     3000    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/function_base.py:1624(_extract_dispatcher)
+     1839    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:298(closed)
+      500    0.001    0.000    0.001    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:209(_assertNdSquareness)
+     3000    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:93(_take_dispatcher)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+     1500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/multiarray.py:1078(putmask)
+      500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:203(_assertRankAtLeast2)
+     3000    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1755(_nonzero_dispatcher)
+     1002    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_internal.py:259(__init__)
+     1800    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_iotools.py:20(_decode_line)
+     2500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/shape_base.py:20(_atleast_1d_dispatcher)
+     1500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/function_base.py:1680(_place_dispatcher)
+     1500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1852(_shape_dispatcher)
+     1798    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+     1002    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_internal.py:340(data)
+     1502    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_distn_infrastructure.py:710(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/model_selection/_split.py:1292(split)
+     1500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:2321(_norm_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:231(open)
+     1500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2185(_any_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/model_selection/_split.py:1429(_iter_indices)
+     1000    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2499(_amax_dispatcher)
+     1500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numerictypes.py:655(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'permutation' of 'numpy.random.mtrand.RandomState' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:577(open)
+     1000    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:197(_reshape_dispatcher)
+       49    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:80(read)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:1827(basicConfig)
+        3    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:208(indexable)
+      500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:2787(_prod_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:1069(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:118(fit_init_params_to_marginal)
+      500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/linalg/linalg.py:323(_solve_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:190(check_consistent_length)
+      500    0.000    0.000    0.000    0.000 {method '__array_prepare__' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/distns/normal.py:52(fit)
+      500    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:3149(_mean_dispatcher)
+       48    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py:250(fit)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:376(abspath)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:489(_add_read_data)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:427(_findfile)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(unique)
+       35    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py:319(decode)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/arraysetops.py:151(unique)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:20(open)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/re.py:232(compile)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/re.py:271(_compile)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/arraysetops.py:297(_unique1d)
+        2    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:1111(_open)
+        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:759(compile)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:123(__init__)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:376(_isurl)
+       35    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/numeric.py:166(ones)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:322(__init__)
+       35    0.000    0.000    0.000    0.000 {built-in method zlib.crc32}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:302(close)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/parse.py:361(urlparse)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:458(abspath)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:75(join)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:405(_read_gzip_header)
+        2    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/model_selection/_split.py:1718(_validate_shuffle_split)
+       33    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:93(prepend)
+        3    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(copyto)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/utils/validation.py:201(<listcomp>)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:338(normpath)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:919(parse)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:337(_iszip)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:503(_sanitize_relative_path)
+       35    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_compression.py:12(_check_not_closed)
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.TextIOWrapper' objects}
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_bootlocale.py:33(getpreferredencoding)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/parse.py:412(urlsplit)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:991(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:367(_possible_names)
+       34    0.000    0.000    0.000    0.000 {method 'cast' of 'memoryview' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:802(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:417(_parse_sub)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:378(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:598(_code)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:493(_read_eof)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:475(_parse)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:1349(setLevel)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:536(_compile_info)
+        2    0.000    0.000    0.000    0.000 {method 'sort' of 'numpy.ndarray' objects}
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:121(splitext)
+        3    0.000    0.000    0.000    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:1304(_clear_cache)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(squeeze)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_compression.py:39(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_compression.py:59(close)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/genericpath.py:16(exists)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:206(keys)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:517(exists)
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:41(_get_sep)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:831(createLock)
+        2    0.000    0.000    0.000    0.000 {built-in method zlib.decompressobj}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py:836(__and__)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:354(_splitzipext)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/genericpath.py:117(_splitext)
+        2    0.000    0.000    0.000    0.000 {built-in method _struct.unpack}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:774(_getconv)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:242(_register_at_fork_reinit_lock)
+       17    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:154(dirname)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/ngboost.py:14(__init__)
+        3    0.000    0.000    0.000    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:385(_init_read)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:389(_read_exact)
+       24    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py:309(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:64(isabs)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/re.py:252(escape)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:343(_escape)
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/parse.py:109(_coerce_args)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:783(_addHandlerRef)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1381(squeeze)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:930(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:1138(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/model_selection/_split.py:1420(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:321(flush)
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:173(_load)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:212(_acquireLock)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:502(__init__)
+       12    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        9    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/os.py:1076(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:174(getwidth)
+        1    0.000    0.000    0.000    0.000 {built-in method math.ceil}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_weakrefset.py:81(add)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:928(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sklearn/model_selection/_split.py:1284(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:328(fileno)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        2    0.000    0.000    0.000    0.000 {built-in method time.time}
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:224(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:233(__next)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:254(get)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:903(fix_flags)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:1526(addHandler)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py:75(RLock)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/arraysetops.py:138(_unpack_tuple)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:988(flatten_dtype_internal)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/npyio.py:1115(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:187(_checkLevel)
+        5    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:221(_releaseLock)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:74(__init__)
+        3    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+        1    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        5    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
+        5    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+        1    0.000    0.000    0.000    0.000 {function DecompressReader.close at 0x10a5beb00}
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py:186(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:71(_compile)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:432(_generate_overlap_table)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:453(_get_iscased)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:461(_get_literal_prefix)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:76(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:81(groups)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:111(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:172(append)
+        1    0.000    0.000    0.000    0.000 {method 'view' of 'numpy.ndarray' objects}
+        8    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/parse.py:98(_noop)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/urllib/parse.py:394(_checknetloc)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:899(setFormatter)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:225(__getitem__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:415(__init__)
+        1    0.000    0.000    0.000    0.000 <string>:2(<module>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+       10    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method from_iterable}
+        1    0.000    0.000    0.000    0.000 {method 'fileno' of '_io.BufferedReader' objects}
+        4    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py:135(splitdrive)
+        3    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/multiarray.py:1043(copyto)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_compile.py:595(isstring)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:160(__len__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:164(__getitem__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:249(match)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/sre_parse.py:286(tell)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py:716(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/fromnumeric.py:1377(_squeeze_dispatcher)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/core/_internal.py:908(__init__)
+        2    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/arraysetops.py:146(_unique_dispatcher)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_datasource.py:332(__del__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/numpy/lib/_iotools.py:46(_is_string_like)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_compression.py:36(readable)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/_compression.py:150(tell)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ngboost/scores.py:4(__init__)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:343(readable)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:346(writable)
+        1    0.000    0.000    0.000    0.000 /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/gzip.py:349(seekable)
+        1    0.000    0.000    0.000    0.000 <string>:2(_parse_args)
+
+
+
