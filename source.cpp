@@ -83,12 +83,15 @@ int main()
     std::vector<int> output_code = encoding(s); 
     if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}       
     time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;    
-    std::cout << "Execution time = " << time << " sec " <<std::endl; 
+    std::cout << "Encoding time = " << time << " sec " <<std::endl; 
     std::cout << "Output Codes are: "; 
     for (int i = 0; i < output_code.size(); i++) { 
         std::cout << output_code[i] << " "; 
     } 
     std::cout << std::endl; 
+    if( clock_gettime(CLOCK_REALTIME, &start) == -1) { perror("clock gettime");} 
     decoding(output_code); 
-
+    if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}  
+    time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;        
+    std::cout << "Decoding time = " << time << " sec " <<std::endl; 
 } 
