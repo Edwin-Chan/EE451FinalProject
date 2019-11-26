@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <time.h>
 std::vector<int> encoding(std::string s1) 
 { 
     std::cout << "Encoding\n"; 
@@ -75,9 +76,14 @@ void decoding(std::vector<int> op)
 } 
 int main() 
 { 
-  
-    std::string s = "WYS*WYGWYS*WYSWYSG"; 
+    struct timespec start, stop;
+    double time = 0;
+    std::string s = "WYS*WYGWYS*WYSWYSG";
+    if( clock_gettime(CLOCK_REALTIME, &start) == -1) { perror("clock gettime");} 
     std::vector<int> output_code = encoding(s); 
+    if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}       
+    time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;    
+    std::cout << "Execution time = " << time << " sec " <<std::endl; 
     std::cout << "Output Codes are: "; 
     for (int i = 0; i < output_code.size(); i++) { 
         std::cout << output_code[i] << " "; 
