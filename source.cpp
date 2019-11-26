@@ -78,7 +78,7 @@ int main()
 { 
     struct timespec start, stop;
     double time = 0;
-    std::string s = "WYS*WYGWYS*WYSWYSG";
+    std::string s = "This is a hello message";
     if( clock_gettime(CLOCK_REALTIME, &start) == -1) { perror("clock gettime");} 
     std::vector<int> output_code = encoding(s); 
     if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}       
