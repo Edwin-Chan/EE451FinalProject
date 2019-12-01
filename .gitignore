@@ -2,4 +2,5 @@
 source
 source_MPI
 lzw_serial_code
+lzw_serial_decode
 *.out
