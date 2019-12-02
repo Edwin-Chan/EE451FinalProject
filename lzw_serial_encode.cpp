@@ -4,10 +4,20 @@
 #include <fstream>
 #include <iostream>
 #include <ctime>
+#include <cmath>
+#include <sys/stat.h>
 
 #define PRINT 0
 
 using namespace std;
+
+int compressed_file_size;
+
+long long get_file_size(string file_name) {
+    struct stat stat_buf;
+    int rc = stat(file_name.c_str(), &stat_buf);
+    return rc == 0 ? stat_buf.st_size : -1;
+}
 
 std::vector<int> encoding(ifstream& ifile, ofstream& ofile) 
 { 
@@ -28,6 +38,7 @@ std::vector<int> encoding(ifstream& ifile, ofstream& ofile)
     std::cout << "String\tOutput_Code\tAddition\n"; 
     #endif
     char ch;
+    unsigned long long cnt = 0;
     while (!ifile.fail()) { 
         // if (i != s1.length() - 1) 
         //     c += s1[i + 1]; 
@@ -45,6 +56,7 @@ std::vector<int> encoding(ifstream& ifile, ofstream& ofile)
             #endif
             output_code.push_back(table[p]); 
             ofile << table[p] << endl;
+            cnt++;
             table[p + c] = code; 
             code++; 
             p = c; 
@@ -56,6 +68,14 @@ std::vector<int> encoding(ifstream& ifile, ofstream& ofile)
     #endif
     output_code.push_back(table[p]); 
     ofile << table[p] << endl;
+
+    // Analysis
+    int num_bits = (int)ceil(log2(code));
+    std::cout << "Largest code assigned: " << code << endl;
+    std::cout << "Number of bits to store each code: " << num_bits << endl;
+    std::cout << "Number of output codes: " << cnt << endl;
+    std::cout << "Estimated best-case compressed size: " << cnt / 8 * num_bits << " bytes" << endl;
+    compressed_file_size = cnt / 8 * num_bits;
     return output_code; 
 } 
 
@@ -82,6 +102,9 @@ int main(int argc, char** argv)
     if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}       
     time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;
     std::cout << "Encoding time = " << time << " sec " <<std::endl; 
+    int file_size = get_file_size(argv[1]);
+    std::cout << "Input file size = " << file_size << endl;
+    std::cout << "Estimated Compression Rate = " << (double)file_size / compressed_file_size << endl;
     
     #if PRINT
     std::cout << "Output Codes are: "; 

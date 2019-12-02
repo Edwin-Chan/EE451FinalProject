@@ -23,22 +23,7 @@ void decoding(ifstream& ifile, ofstream& ofile)
     c += s[0]; 
     ofile << s; 
     int count = 256; 
-    // for (int i = 0; i < op.size() - 1; i++) { 
-    //     n = op[i + 1]; 
-    //     if (table.find(n) == table.end()) { 
-    //         s = table[old]; 
-    //         s = s + c; 
-    //     } 
-    //     else { 
-    //         s = table[n]; 
-    //     } 
-    //     std::cout << s; 
-    //     c = ""; 
-    //     c += s[0]; 
-    //     table[count] = table[old] + c; 
-    //     count++; 
-    //     old = n; 
-    // }
+
     while (ifile >> n) {
         if (table.find(n) == table.end()) { 
             s = table[old]; 
