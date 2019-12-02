@@ -3,4 +3,9 @@ source
 source_MPI
 lzw_serial_encode
 lzw_serial_decode
+filestream_try*
+lzw_parallel_encode
+lzw_parallel_decode
+lzw_standard_encode
+lzw_standard_decode
 *.out

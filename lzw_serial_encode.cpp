@@ -19,7 +19,7 @@ long long get_file_size(string file_name) {
     return rc == 0 ? stat_buf.st_size : -1;
 }
 
-std::vector<int> encoding(ifstream& ifile, ofstream& ofile) 
+std::vector<int> encoding(ifstream& ifile) 
 { 
     std::cout << "Encoding\n"; 
     std::unordered_map<std::string, int> table; 
@@ -55,7 +55,7 @@ std::vector<int> encoding(ifstream& ifile, ofstream& ofile)
                  << p + c << "\t" << code << std::endl; 
             #endif
             output_code.push_back(table[p]); 
-            ofile << table[p] << endl;
+            // ofile << table[p] << endl;
             cnt++;
             table[p + c] = code; 
             code++; 
@@ -67,7 +67,7 @@ std::vector<int> encoding(ifstream& ifile, ofstream& ofile)
     std::cout << p << "\t" << table[p] << std::endl; 
     #endif
     output_code.push_back(table[p]); 
-    ofile << table[p] << endl;
+    // ofile << table[p] << endl;
 
     // Analysis
     int num_bits = (int)ceil(log2(code));
@@ -98,13 +98,17 @@ int main(int argc, char** argv)
     struct timespec start, stop;
     double time = 0;
     if( clock_gettime(CLOCK_REALTIME, &start) == -1) { perror("clock gettime");}
-    std::vector<int> output_code = encoding(ifile, ofile); 
+    std::vector<int> output_code = encoding(ifile); 
     if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}       
     time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;
     std::cout << "Encoding time = " << time << " sec " <<std::endl; 
     int file_size = get_file_size(argv[1]);
     std::cout << "Input file size = " << file_size << endl;
     std::cout << "Estimated Compression Rate = " << (double)file_size / compressed_file_size << endl;
+
+    for (unsigned long long i = 0; i < output_code.size(); i++) {
+        ofile << output_code[i] << endl;
+    }
     
     #if PRINT
     std::cout << "Output Codes are: "; 

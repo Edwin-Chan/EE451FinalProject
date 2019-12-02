@@ -69,4 +69,6 @@ int main(int argc, char** argv)
     if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}  
     time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;        
     std::cout << "Decoding time = " << time << " sec " <<std::endl; 
+
+    return 0;
 } 
