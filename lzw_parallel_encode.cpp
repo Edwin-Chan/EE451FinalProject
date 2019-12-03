@@ -110,6 +110,7 @@ void* encode(void* args) {
 
     if (curr_arg->id * 2 + 1 <= num_thread) {
         pthread_join(threads[curr_arg->id*2], NULL);
+        delete thread_args[curr_arg->id*2].table;
     }
 
     return NULL;
@@ -179,12 +180,17 @@ int main(int argc, char** argv) {
     std::ofstream ofile(output_file_name);
     long long max_code = 0;
     unsigned long long total_size = 0;
+    // Update: Add a block header in the beginning
+    ofile << -2 << " " << num_thread << endl;
     for (int i = 0; i < num_thread; i++) {
         total_size += thread_args[i].output_code.size();
+        // Update: Add a file breaker for decode
+        ofile << -1 << " " << thread_args[i].output_code.size() << endl;
         for (size_t j = 0; j < thread_args[i].output_code.size(); j++) {
             ofile << thread_args[i].output_code[j] << endl;
             max_code = thread_args[i].output_code[j] > max_code ? thread_args[i].output_code[j] : max_code;
         }
+        
     }
     int num_bits = (int)ceil(log2(max_code));
 
@@ -194,6 +200,12 @@ int main(int argc, char** argv) {
     unsigned long long compressed_file_size = total_size * num_bits / 8;
     std::cout << "Estimated best-case compressed size: " << compressed_file_size << " bytes" << endl;
     std::cout << "Estimated Compression Rate = " << (double)input_file_size / compressed_file_size << endl;
+
+
+    delete thread_args[0].table;
+    delete [] threads;
+    delete [] thread_args;
+    delete thread_attr;
 
     return 0;
 }

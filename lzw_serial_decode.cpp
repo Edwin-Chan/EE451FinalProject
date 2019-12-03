@@ -47,7 +47,7 @@ void decoding(ifstream& ifile, ofstream& ofile)
 int main(int argc, char** argv) 
 { 
     if (argc < 2 || argc > 3) {
-        cerr << "usage: ./law_serial_decode input_file [output_file]" << endl;
+        cerr << "usage: ./lzw_serial_decode input_file [output_file]" << endl;
         return 1;
     }
 
