@@ -9,6 +9,7 @@
 - Finish implementing the lzw_parallel_decode. 
 - Create test cases.
 - *Optional* improve the code to accomodate for non-ascii inputs, such as images. This can either be done by reading a file in binary or use specific libraries. If we have enough text samples, this can be optional.
+- *Optional* Come up with a new algorithm that parallelizes LZW compression. Due to the time constraint we have here, this has become an optional goal.
 
 ## File Structure
 - lzw_serial_encode: Performs serial LZW compression on a file. Usage: ./lzw_serial_encode input_filename output_filename
