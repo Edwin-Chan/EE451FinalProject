@@ -128,7 +128,7 @@ int main(int argc, char** argv) {
     }
 
     num_thread = atoi(argv[1]);
-    if (num_thread < 1 || num_thread > 8) {
+    if (num_thread < 1 || num_thread > 16) {
         cerr << "Unsupported number of threads" << endl;
         return 1;
     }
@@ -177,11 +177,23 @@ int main(int argc, char** argv) {
 
     // Gather output codes
     std::ofstream ofile(output_file_name);
+    long long max_code = 0;
+    unsigned long long total_size = 0;
     for (int i = 0; i < num_thread; i++) {
+        total_size += thread_args[i].output_code.size();
         for (size_t j = 0; j < thread_args[i].output_code.size(); j++) {
             ofile << thread_args[i].output_code[j] << endl;
+            max_code = thread_args[i].output_code[j] > max_code ? thread_args[i].output_code[j] : max_code;
         }
     }
+    int num_bits = (int)ceil(log2(max_code));
+
+    std::cout << "Largest code assigned: " << max_code << endl;
+    std::cout << "Number of bits to store each code: " << num_bits << endl;
+    std::cout << "Number of output codes: " << total_size << endl;
+    unsigned long long compressed_file_size = total_size * num_bits / 8;
+    std::cout << "Estimated best-case compressed size: " << compressed_file_size << " bytes" << endl;
+    std::cout << "Estimated Compression Rate = " << (double)input_file_size / compressed_file_size << endl;
 
     return 0;
 }
