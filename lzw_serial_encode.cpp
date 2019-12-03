@@ -74,8 +74,8 @@ std::vector<int> encoding(ifstream& ifile)
     std::cout << "Largest code assigned: " << code << endl;
     std::cout << "Number of bits to store each code: " << num_bits << endl;
     std::cout << "Number of output codes: " << cnt << endl;
-    std::cout << "Estimated best-case compressed size: " << cnt / 8 * num_bits << " bytes" << endl;
-    compressed_file_size = cnt / 8 * num_bits;
+    std::cout << "Estimated best-case compressed size: " << cnt * num_bits / 8 << " bytes" << endl;
+    compressed_file_size = cnt * num_bits / 8;
     return output_code; 
 } 
 

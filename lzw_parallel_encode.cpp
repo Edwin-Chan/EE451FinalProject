@@ -9,6 +9,7 @@
 #include <pthread.h>
 
 #define PRINT 0
+#define DEBUG 0
 
 using std::cout;
 using std::cerr;
@@ -36,9 +37,16 @@ void* encode(void* args) {
     std::ifstream ifile(curr_arg->filename);
     ifile.seekg(curr_arg->start);
 
+    #if DEBUG
+    printf("Thread %d starts running with the following params\nstart = %lld\nblock_size = %lld\ncode_begin = %lld\n", curr_arg->id, curr_arg->start, curr_arg->block_size, curr_arg->code_begin);
+    #endif
+
     std::string p = "", c = ""; 
     // p += s1[0];
     p += (char)ifile.get();
+    #if DEBUG
+        printf("Thread %d: Initial Read: %s\n", curr_arg->id, p.c_str());
+    #endif
     int code = curr_arg->code_begin; 
     char ch;
     unsigned long long cnt = 1;
@@ -53,49 +61,55 @@ void* encode(void* args) {
             p = p + c; 
         } 
         else { 
-            #if PRINT
-            std::cout << p << "\t" << table[p] << "\t\t" 
+            #if DEBUG
+            std::cout << p << "\t" << curr_arg->table->at(p) << "\t\t" 
                  << p + c << "\t" << code << std::endl; 
             #endif
             curr_arg->output_code.push_back(curr_arg->table->at(p)); 
-            cnt++;
+            
             curr_arg->table->insert(std::make_pair(p+c, code)); 
             code++; 
             p = c; 
         } 
         c = ""; 
-
-        if (curr_arg->block_size > 0 && cnt > curr_arg->block_size) {
+        cnt++;
+        if (curr_arg->block_size > 0 && cnt >= (unsigned long long)curr_arg->block_size) {
             break;
         }
     } 
-    #if PRINT
-    std::cout << p << "\t" << table[p] << std::endl; 
+    #if DEBUG
+    std::cout << p << "\t" << curr_arg->table->at(p) << std::endl; 
     #endif
     curr_arg->output_code.push_back(curr_arg->table->at(p)); 
     
     // start new threads
-    if (curr_arg->id * 2 < num_thread) {
-        int next_id = curr_arg->id * 2;
+    if (curr_arg->id * 2 <= num_thread) {
+        int next_id = curr_arg->id * 2 - 1;
+        #if DEBUG
+            printf("Creating thread %d\n", next_id);
+        #endif
         thread_args[next_id].code_begin = code;
         thread_args[next_id].table = curr_arg->table;
         // pthread_create(&threads[next_id], thread_attr, encode, (void*)&thread_args[next_id]);
     }
 
-    if (curr_arg->id * 2 + 1 < num_thread) {
-        int next_id = curr_arg->id * 2 + 1;
+    if (curr_arg->id * 2 + 1 <= num_thread) {
+        int next_id = curr_arg->id * 2;
+        #if DEBUG
+            printf("Creating thread %d\n", next_id);
+        #endif
         thread_args[next_id].code_begin = code;
         thread_args[next_id].table = new std::unordered_map<std::string, long long>(*(curr_arg->table));
         pthread_create(&threads[next_id], thread_attr, encode, (void*)&thread_args[next_id]);
     }
 
-    if (curr_arg->id * 2 < num_thread) {
+    if (curr_arg->id * 2 <= num_thread) {
         // pthread_join(threads[curr_arg->id*2], NULL);
-        encode((void*)&thread_args[curr_arg->id * 2]);
+        encode((void*)&thread_args[curr_arg->id * 2 - 1]);
     }
 
-    if (curr_arg->id * 2 + 1 < num_thread) {
-        pthread_join(threads[curr_arg->id*2+1], NULL);
+    if (curr_arg->id * 2 + 1 <= num_thread) {
+        pthread_join(threads[curr_arg->id*2], NULL);
     }
 
     return NULL;
