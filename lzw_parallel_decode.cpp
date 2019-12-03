@@ -6,6 +6,8 @@
 
 #include <pthread.h>
 
+#define DEBUG 1
+
 using std::endl;
 using std::cerr;
 using std::cout;
@@ -46,7 +48,7 @@ void* decode(void* args)
     curr_arg.output.push_back(s);
     int count = curr_arg.code_begin;
 
-    for (int i = curr_arg.start; i <= curr_arg.end; i++) {
+    for (int i = curr_arg.start+1; i <= curr_arg.end; i++) {
         n = codes[i];
         if (curr_arg.table->find(n) == curr_arg.table->end()) {
             s = curr_arg.table->at(old);
