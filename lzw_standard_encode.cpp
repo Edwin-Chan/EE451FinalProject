@@ -2,21 +2,50 @@
 #include <vector>
 #include <map>
 #include <iostream>
+using namespace std;
 #include <fstream>
+#include <unordered_map>
+#include <ctime>
 #include <cmath>
 #include <sys/stat.h>
-#include "mpi.h"
-using namespace std;
+#include <pthread.h>
 
-long long get_file_size(string file_name) {
-    struct stat stat_buf;
-    int rc = stat(file_name.c_str(), &stat_buf);
-    return rc == 0 ? stat_buf.st_size : -1;
-}
+#define PRINT 0
+#define DEBUG 0
 
-std::vector<int> encoding(ifstream& ifile, long long len) 
+using std::cout;
+using std::cerr;
+using std::endl;
+
+int num_thread;
+
+pthread_attr_t* thread_attr;
+pthread_t* threads;
+
+struct thread_args_t {
+    int id;
+    std::string filename;
+    long long start;
+    long long block_size;
+    std::unordered_map<std::string, long long>* table;
+    long long code_begin;
+    std::vector<long long> output_code;
+};
+
+thread_args_t* thread_args;
+
+
+void* encode(void* args)
 { 
-    // std::cout << "Encoding\n"; 
+    thread_args_t* curr_arg = (thread_args_t*)args;
+    std::ifstream ifile(curr_arg->filename);
+    ifile.seekg(curr_arg->start);
+
+    #if DEBUG
+    printf("Thread %d starts running with the following params\nstart = %lld\nblock_size = %lld\n", curr_arg->id, curr_arg->start, curr_arg->block_size);
+    #endif
+
+
     std::unordered_map<std::string, int> table; 
     for (int i = 0; i <= 255; i++) { 
         std::string ch = ""; 
@@ -25,126 +54,141 @@ std::vector<int> encoding(ifstream& ifile, long long len)
     } 
   
     std::string p = "", c = ""; 
-    p += ifile.get(); 
+    p += (char)ifile.get();
+
+    #if DEBUG
+        printf("Thread %d: Initial Read: %s\n", curr_arg->id, p.c_str());
+    #endif
+
     int code = 256; 
     std::vector<int> output_code; 
-    // std::cout << "String\tOutput_Code\tAddition\n"; 
-    unsigned long long cnt = 1;
-    char ch;
-    while (!ifile.fail()) { 
-        ch = ifile.get();
 
-        if (!ifile.eof()) 
-            c += ch; 
+    char ch;
+    unsigned long long cnt = 1;
+    while (!ifile.fail()) { 
+        // if (i != s1.length() - 1) 
+        //     c += s1[i + 1]; 
+        ch = ifile.get();
+        if (!ifile.eof()) {
+            c += ch;
+        }
         if (table.find(p + c) != table.end()) { 
             p = p + c; 
         } 
         else { 
-            // std::cout << p << "\t" << table[p] << "\t\t" 
-            //      << p + c << "\t" << code << std::endl; 
-            output_code.push_back(table[p]); 
-            cnt++;
+            #if DEBUG
+            std::cout << p << "\t" << table[p]  << "\t\t" 
+                 << p + c << "\t" << code << std::endl; 
+            #endif
+            curr_arg->output_code.push_back(table[p]); 
+            
             table[p + c] = code; 
             code++; 
             p = c; 
         } 
         c = ""; 
-        if (len > 0 && cnt > len) {
+        cnt++;
+        if (curr_arg->block_size > 0 && cnt >= (unsigned long long)curr_arg->block_size) {
             break;
         }
-    } 
-    // std::cout << p << "\t" << table[p] << std::endl; 
-    output_code.push_back(table[p]); 
-    return output_code; 
-} 
-  
-std::vector<string> decoding(std::vector<int> op) 
-{ 
-    std::cout << "Decoding\n"; 
-    std::unordered_map<int, std::string> table; 
-    std::vector<string> output_ori ;
-    for (int i = 0; i <= 255; i++) { 
-        std::string ch = ""; 
-        ch += char(i); 
-        table[i] = ch; 
-    } 
-    int old = op[0], n; 
-    std::string s = table[old]; 
-    std::string c = ""; 
-    c += s[0]; 
-    //std::cout << s; 
-    output_ori.push_back(s) ;
-    int count = 256; 
-    for (int i = 0; i < op.size() - 1; i++) { 
-        n = op[i + 1]; 
-        if (table.find(n) == table.end()) { 
-            s = table[old]; 
-            s = s + c; 
-        } 
-        else { 
-            s = table[n]; 
-        } 
-        output_ori.push_back(s);
-        c = ""; 
-        c += s[0]; 
-        table[count] = table[old] + c; 
-        count++; 
-        old = n; 
-    }
-    return output_ori ;
-} 
-int main(int argc, char** argv) 
-{ 
-    string input_file_name = "data/EnglishBible.txt";
-    string output_file_name = "MPIEncoded.out";
-    int len = get_file_size(input_file_name);
-    if (len == -1) {
-        cerr << "Cannot open input file" << endl;
-        return -1;
     }
 
-    int size, rank;
-    MPI_Init(&argc,&argv);
-    MPI_Comm_size(MPI_COMM_WORLD,&size);
-    MPI_Comm_rank(MPI_COMM_WORLD,&rank);
-    int signal=1;
+    #if DEBUG
+    std::cout << p << "\t" << curr_arg->table->at(p) << std::endl; 
+    #endif
+    curr_arg->output_code.push_back(table[p]);
+    return NULL;
+}
 
-    // std::string s = "WYS*WYGWYS*WYSWYSG"; 
+long long get_file_size(std::string file_name) {
+    struct stat stat_buf;
+    int rc = stat(file_name.c_str(), &stat_buf);
+    return rc == 0 ? stat_buf.st_size : -1;
+}
+
     
-    int l = len/2 ;
-
-    if(rank  == 0){
-        ifstream ifile(input_file_name);
-        std::vector<int> output_code0 = encoding(ifile, l); 
-        // std::vector<string> outp =decoding(output_code0); 
-        // std::cout <<"the decodeing result is \n";
-        // for(int i=0; i<outp.size();i++){
-        // cout<<outp[i];
-        // }
-        ofstream ofile(output_file_name);
-        for (unsigned long long i = 0; i < output_code0.size(); i++) {
-            ofile << output_code0[i] << endl;
-        }
-        ofile.close();
-        MPI_Send( &signal, 1, MPI_INT, 1, 1, MPI_COMM_WORLD);
-
+int main(int argc, char** argv) {
+    if (argc != 4) {
+        cerr << "usage: ./lzw_parallel_encode num_thread input_file output_file" << endl;
+        return 1;
     }
-    if(rank  == 1){
-        ifstream ifile(input_file_name);
-        ifile.seekg(l);
-        std::vector<int> output_code1 = encoding(ifile, -1); 
-        // std::vector<string> outp =decoding(output_code1); 
-        MPI_Recv( &signal, 1, MPI_INT, 0, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        ofstream ofile;
-        ofile.open(output_file_name, std::ios::out | std::ios::app);
-        for (unsigned long long i = 0; i < output_code1.size(); i++) {
-            ofile << output_code1[i] << endl;
-        }
-        ofile.close();
-        // for(int i=0; i<outp.size();i++){
-        // cout<<outp[i];
-        // }
+
+    num_thread = atoi(argv[1]);
+    if (num_thread < 1 || num_thread > 16) {
+        cerr << "Unsupported number of threads" << endl;
+        return 1;
     }
-    cout<<endl;
-    MPI_Finalize();
-} 
+
+    std::string input_file_name = argv[2];
+    std::string output_file_name = argv[3];
+
+
+    long long input_file_size = get_file_size(input_file_name);
+    if (input_file_size == -1) {
+        cerr << "Error reading input file" << endl;
+        return 1;
+    }
+
+    threads = new pthread_t[num_thread];
+    thread_args = new thread_args_t[num_thread];
+
+    long long block_size = input_file_size / num_thread;
+    for (int i = 0; i < num_thread; ++i) {
+        thread_args[i].id = i+1;
+        thread_args[i].filename = input_file_name;
+        thread_args[i].start = i*block_size;
+        thread_args[i].block_size = i == num_thread-1 ? -1 : block_size; // -1 indicates reading until the end
+    }
+
+    struct timespec start, stop;
+    double time = 0;
+    if( clock_gettime(CLOCK_REALTIME, &start) == -1) { perror("clock gettime");}
+
+
+    for(int i = 0; i < num_thread; ++i)
+        {
+            pthread_create(&threads[i], thread_attr, encode, (void*)&thread_args[i]);
+        }
+
+    for(int i = 0; i < num_thread; ++i)
+        {
+            pthread_join(threads[i], NULL);
+        }
+
+    if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}       
+    time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;
+    std::cout << "Encoding time = " << time << " sec " <<std::endl;
+
+
+    // Gather output codes
+    std::ofstream ofile(output_file_name);
+    long long max_code = 0;
+    unsigned long long total_size = 0;
+    // Update: Add a block header in the beginning
+    ofile << -2 << " " << num_thread << endl;
+    for (int i = 0; i < num_thread; i++) {
+        total_size += thread_args[i].output_code.size();
+        // Update: Add a file breaker for decode
+        ofile << -1 << " " << thread_args[i].output_code.size() << endl;
+        for (size_t j = 0; j < thread_args[i].output_code.size(); j++) {
+            ofile << thread_args[i].output_code[j] << endl;
+            max_code = thread_args[i].output_code[j] > max_code ? thread_args[i].output_code[j] : max_code;
+        }
+        
+    }
+    int num_bits = (int)ceil(log2(max_code));
+
+    std::cout << "Largest code assigned: " << max_code << endl;
+    std::cout << "Number of bits to store each code: " << num_bits << endl;
+    std::cout << "Number of output codes: " << total_size << endl;
+    unsigned long long compressed_file_size = total_size * num_bits / 8;
+    std::cout << "Estimated best-case compressed size: " << compressed_file_size << " bytes" << endl;
+    std::cout << "Estimated Compression Rate = " << (double)input_file_size / compressed_file_size << endl;
+
+
+    delete thread_args[0].table;
+    delete [] threads;
+    delete [] thread_args;
+    delete thread_attr;
+    return 0;
+}
