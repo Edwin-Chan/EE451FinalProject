@@ -4,7 +4,7 @@ DEBUG = -g -Wall
 C11 = -std=c++11
 FAST = -O3
 
-all: lzw_serial_encode lzw_serial_decode lzw_parallel_encode lzw_standard_encode lzw_parallel_decode
+all: lzw_serial_encode lzw_serial_decode lzw_parallel_encode lzw_standard_encode lzw_parallel_decode lzw_standard_encode lzw_standard_decode
 
 lzw_serial_encode: lzw_serial_encode.cpp
 	$(CC) $(DEBUG) $(C11) $< -o $@
@@ -21,8 +21,15 @@ lzw_standard_encode: lzw_standard_encode.cpp
 lzw_parallel_decode: lzw_parallel_decode.cpp
 	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
 
+lzw_standard_encode: lzw_standard_encode.cpp
+	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
+
+lzw_standard_decode: lzw_standard_decode.cpp
+	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
+
+
 
 .PHONY: clean
 
 clean: 
-	rm -f lzw_serial_encode lzw_serial_decode lzw_parallel_encode lzw_standard_encode lzw_parallel_decode
+	rm -f lzw_serial_encode lzw_serial_decode lzw_parallel_encode lzw_standard_encode lzw_parallel_decode lzw_standard_encode lzw_standard_decode
