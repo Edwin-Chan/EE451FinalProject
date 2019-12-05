@@ -22,7 +22,6 @@
 - source.cpp: initial source code for LZW compression and decompression. Use as a reference.
 - source_MPI.cpp: initial souce code for standard parallelization of LZW. Use as a reference.
 - Makefile, .gitignore: control files for the repo and compilation. 
-- Other files can be deleted.
 
 ## Group Members:
 - Fook Yen Edwin Chan (fookyenc@usc.edu)
