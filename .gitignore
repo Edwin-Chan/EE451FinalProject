@@ -9,3 +9,8 @@ lzw_parallel_decode
 lzw_standard_encode
 lzw_standard_decode
 *.out
+*.dSYM
+decode 
+output
+log
+
