@@ -13,4 +13,5 @@ lzw_standard_decode
 decode 
 output
 log
+input_gen
 

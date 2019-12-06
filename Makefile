@@ -15,9 +15,6 @@ lzw_serial_decode: lzw_serial_decode.cpp
 lzw_parallel_encode: lzw_parallel_encode.cpp
 	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
 
-lzw_standard_encode: lzw_standard_encode.cpp
-	$(MPICC) $(C11) $< -o $@
-
 lzw_parallel_decode: lzw_parallel_decode.cpp
 	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
 
@@ -26,6 +23,9 @@ lzw_standard_encode: lzw_standard_encode.cpp
 
 lzw_standard_decode: lzw_standard_decode.cpp
 	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
+
+input_gen: input_gen.cpp
+	$(CC) $(DEBUG) $(C11) $< -o $@
 
 
 
