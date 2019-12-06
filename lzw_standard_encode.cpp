@@ -115,7 +115,7 @@ int main(int argc, char** argv) {
     }
 
     num_thread = atoi(argv[1]);
-    if (num_thread < 1 || num_thread > 16) {
+    if (num_thread < 1) {
         cerr << "Unsupported number of threads" << endl;
         return 1;
     }

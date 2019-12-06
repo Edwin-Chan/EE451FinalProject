@@ -43,6 +43,12 @@ do
     echo "\nStandard, 8 threads:" >> $LOG_DIR$FBASE$LOG
     ./lzw_standard_encode 8 $f $OUTPUT_DIR$FBASE$STAOUT >> $LOG_DIR$FBASE$LOG
     ./lzw_standard_decode $OUTPUT_DIR$FBASE$STAOUT $DECODE_DIR$FBASE$STADEC >> $LOG_DIR$FBASE$LOG
+    echo "\nStandard, 16 threads:" >> $LOG_DIR$FBASE$LOG
+    ./lzw_standard_encode 16 $f $OUTPUT_DIR$FBASE$STAOUT >> $LOG_DIR$FBASE$LOG
+    ./lzw_standard_decode $OUTPUT_DIR$FBASE$STAOUT $DECODE_DIR$FBASE$STADEC >> $LOG_DIR$FBASE$LOG
+    echo "\nStandard, 32 threads:" >> $LOG_DIR$FBASE$LOG
+    ./lzw_standard_encode 32 $f $OUTPUT_DIR$FBASE$STAOUT >> $LOG_DIR$FBASE$LOG
+    ./lzw_standard_decode $OUTPUT_DIR$FBASE$STAOUT $DECODE_DIR$FBASE$STADEC >> $LOG_DIR$FBASE$LOG
     # ./lzw_parallel_encode 7 $f $OUTPUT_DIR$FBASE$POUT > $LOG_DIR$FBASE$PLOG
     echo "\nParallel, 3 blocks:" >> $LOG_DIR$FBASE$LOG
     ./lzw_parallel_encode 3 $f $OUTPUT_DIR$FBASE$POUT >> $LOG_DIR$FBASE$LOG
