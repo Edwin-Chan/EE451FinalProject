@@ -6,10 +6,13 @@
 #include <ctime>
 
 using namespace std;
+#define PRINT 0
 
 void decoding(ifstream& ifile, ofstream& ofile) 
 { 
+    #if PRINT
     std::cout << "Decoding\n"; 
+    #endif
     std::unordered_map<int, std::string> table; 
     for (int i = 0; i <= 255; i++) { 
         std::string ch = ""; 
@@ -40,7 +43,9 @@ void decoding(ifstream& ifile, ofstream& ofile)
         old = n; 
     }
 
+    #if PRINT
     std::cout << "\nEND"<<std::endl;
+    #endif
 
 } 
 

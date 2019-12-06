@@ -2,13 +2,13 @@
 #include <vector>
 #include <map>
 #include <iostream>
-using namespace std;
 #include <fstream>
-#include <unordered_map>
 #include <ctime>
 #include <cmath>
 #include <sys/stat.h>
 #include <pthread.h>
+
+using namespace std;
 
 #define PRINT 0
 #define DEBUG 0
@@ -33,6 +33,7 @@ struct thread_args_t {
 };
 
 thread_args_t* thread_args;
+
 
 
 void* encode(void* args)
@@ -177,12 +178,14 @@ int main(int argc, char** argv) {
         
     }
     int num_bits = (int)ceil(log2(max_code));
+    unsigned long long compressed_file_size = total_size * num_bits / 8;
 
+    #if PRINT
     std::cout << "Largest code assigned: " << max_code << endl;
     std::cout << "Number of bits to store each code: " << num_bits << endl;
     std::cout << "Number of output codes: " << total_size << endl;
-    unsigned long long compressed_file_size = total_size * num_bits / 8;
     std::cout << "Estimated best-case compressed size: " << compressed_file_size << " bytes" << endl;
+    #endif
     std::cout << "Estimated Compression Rate = " << (double)input_file_size / compressed_file_size << endl;
 
 

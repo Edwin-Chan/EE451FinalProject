@@ -7,25 +7,25 @@ FAST = -O3
 all: lzw_serial_encode lzw_serial_decode lzw_parallel_encode lzw_standard_encode lzw_parallel_decode lzw_standard_encode lzw_standard_decode
 
 lzw_serial_encode: lzw_serial_encode.cpp
-	$(CC) $(DEBUG) $(C11) $< -o $@
+	$(CC) $(FAST) $(C11) $< -o $@
 
 lzw_serial_decode: lzw_serial_decode.cpp
-	$(CC) $(DEBUG) $(C11) $< -o $@
+	$(CC) $(FAST) $(C11) $< -o $@
 
 lzw_parallel_encode: lzw_parallel_encode.cpp
-	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
+	$(CC) $(FAST) $(C11) $< -o $@ -pthread
 
 lzw_parallel_decode: lzw_parallel_decode.cpp
-	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
+	$(CC) $(FAST) $(C11) $< -o $@ -pthread
 
 lzw_standard_encode: lzw_standard_encode.cpp
-	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
+	$(CC) $(FAST) $(C11) $< -o $@ -pthread
 
 lzw_standard_decode: lzw_standard_decode.cpp
-	$(CC) $(DEBUG) $(C11) $< -o $@ -pthread
+	$(CC) $(FAST) $(C11) $< -o $@ -pthread
 
 input_gen: input_gen.cpp
-	$(CC) $(DEBUG) $(C11) $< -o $@
+	$(CC) $(FAST) $(C11) $< -o $@
 
 
 

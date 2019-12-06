@@ -1,0 +1,44 @@
+Serial:
+Encoding time = 0.0002582 sec 
+Estimated Compression Rate = 1.12527
+Decoding time = 0.0002342 sec 
+
+Standard, 2 threads:
+Encoding time = 0.0005486 sec 
+Estimated Compression Rate = 0.981783
+Decoding time = 0.0004134 sec 
+
+Standard, 4 threads:
+Encoding time = 0.0007445 sec 
+Estimated Compression Rate = 0.997079
+Decoding time = 0.000518 sec 
+
+Standard, 8 threads:
+Encoding time = 0.0015069 sec 
+Estimated Compression Rate = 0.947271
+Decoding time = 0.0007375 sec 
+
+Parallel, 3 blocks:
+Encoding time = 0.0008491 sec 
+Estimated Compression Rate = 1.07789
+Decoding time = 0.0004821 sec 
+
+Parallel, 7 blocks:
+Encoding time = 0.0013302 sec 
+Estimated Compression Rate = 1.01688
+Decoding time = 0.0007071 sec 
+
+Parallel, 15 blocks:
+Encoding time = 0.002238 sec 
+Estimated Compression Rate = 1.07001
+Decoding time = 0.0010908 sec 
+
+Parallel, 31 blocks:
+Encoding time = 0.0049156 sec 
+Estimated Compression Rate = 1.02196
+Decoding time = 0.0022317 sec 
+
+Parallel, 63 blocks:
+Encoding time = 0.0072018 sec 
+Estimated Compression Rate = 0.975238
+Decoding time = 0.0054961 sec 

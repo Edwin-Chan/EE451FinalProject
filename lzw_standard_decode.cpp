@@ -105,6 +105,11 @@ int main(int argc, char** argv)
 
     ifile >> num_thread;
 
+    struct timespec start, stop;
+    double time = 0;
+    
+    if( clock_gettime(CLOCK_REALTIME, &start) == -1) { perror("clock gettime");}
+
     threads = new pthread_t[num_thread];
     thread_args = new thread_args_t[num_thread];
 
@@ -149,6 +154,11 @@ int main(int argc, char** argv)
         {
             pthread_join(threads[i], NULL);
         }
+
+    if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) { perror("clock gettime");}  
+    time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;        
+    std::cout << "Decoding time = " << time << " sec " <<std::endl; 
+
 
     std::ofstream ofile(output_file);
     for (int i = 0; i < num_thread; i++) {

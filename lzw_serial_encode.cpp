@@ -21,7 +21,9 @@ long long get_file_size(string file_name) {
 
 std::vector<int> encoding(ifstream& ifile) 
 { 
+    #if PRINT
     std::cout << "Encoding\n"; 
+    #endif
     std::unordered_map<std::string, int> table; 
     for (int i = 0; i <= 255; i++) { 
         std::string ch = ""; 
@@ -71,10 +73,12 @@ std::vector<int> encoding(ifstream& ifile)
 
     // Analysis
     int num_bits = (int)ceil(log2(code));
+    #if PRINT
     std::cout << "Largest code assigned: " << code << endl;
     std::cout << "Number of bits to store each code: " << num_bits << endl;
     std::cout << "Number of output codes: " << cnt << endl;
     std::cout << "Estimated best-case compressed size: " << cnt * num_bits / 8 << " bytes" << endl;
+    #endif
     compressed_file_size = cnt * num_bits / 8;
     return output_code; 
 } 
@@ -103,7 +107,9 @@ int main(int argc, char** argv)
     time = (stop.tv_sec - start.tv_sec)+ (double)(stop.tv_nsec - start.tv_nsec)/1e9;
     std::cout << "Encoding time = " << time << " sec " <<std::endl; 
     int file_size = get_file_size(argv[1]);
+    #if PRINT
     std::cout << "Input file size = " << file_size << endl;
+    #endif
     std::cout << "Estimated Compression Rate = " << (double)file_size / compressed_file_size << endl;
 
     for (unsigned long long i = 0; i < output_code.size(); i++) {

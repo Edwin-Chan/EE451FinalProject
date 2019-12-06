@@ -33,8 +33,26 @@ int main() {
     mt19937 rand_gen;
     rand_gen.seed(time(0));
 
-    ofile.open("random_text.txt");
+    ofile.open("random_text_4096.txt");
     for (int i = 0; i < 4096; i++) {
+        ofile << char('a' + rand_gen()%26);
+    }
+    ofile.close();
+
+    ofile.open("random_text_1024.txt");
+    for (int i = 0; i < 1024; i++) {
+        ofile << char('a' + rand_gen()%26);
+    }
+    ofile.close();
+
+    ofile.open("random_text_1M.txt");
+    for (int i = 0; i < 1024*1024; i++) {
+        ofile << char('a' + rand_gen()%26);
+    }
+    ofile.close();
+
+    ofile.open("random_text_10M.txt");
+    for (int i = 0; i < 1024*1024*10; i++) {
         ofile << char('a' + rand_gen()%26);
     }
     ofile.close();
