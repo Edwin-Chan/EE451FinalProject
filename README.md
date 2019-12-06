@@ -2,7 +2,6 @@
 
 ## TODO
 - **Improve README.**
-- **Finish presentation slides.**
 - **Add graphs and experiment data to the report.**
 
 ## Group Members:
