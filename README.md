@@ -1,9 +1,5 @@
 # EE 451 Final Project: Parallelized LZW Algorithm
 
-## TODO
-- **Improve README.**
-- **Add graphs and experiment data to the report.**
-
 ## Group Members:
 - Fook Yen Edwin Chan (fookyenc@usc.edu)
 - Yizhou Sheng (yizhoush@usc.edu) 
@@ -23,6 +19,7 @@
 - `lzw_serial_decode`, `lzw_standard_decode`, `lzw_parallel_decode`: Performs decoding for the corresponding compression algorithm. Usage: `./[decode_exec] input_filename output_filename`
 - `data`: Folder that contains the test data. Currently contains a sample input with a single sentence, and a text version of the English Bible.
 - `log`: Statistics of execution, if run with `run.sh`.
+- `data-plot`: Complete statistics of the experiment in Excel format, with plots of typical runtime and compression rates.
 - `source.cpp`: initial source code for LZW compression and decompression. Used as a reference.
 - `source_MPI.cpp`: initial souce code for standard parallelization of LZW. Use as a reference.
 - `Makefile`, `.gitignore`: control files for the repo and compilation. 
