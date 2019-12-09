@@ -25,8 +25,7 @@
 - `Makefile`, `.gitignore`: control files for the repo and compilation. 
 - `run.sh`: Bash script to run all test cases.
 - `input_gen.cpp`: Code to generate formatted input for experiment. Not required for any algorithm and not automatically compiled. Used as a reference.
-
-
+- `paper.pdf`: Our project paper on this project.
 
 -----------
 ## Project Briefing
